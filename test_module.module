@@ -1,0 +1,40 @@
+<?php
+
+/**
+ * Implements hook_menu().
+ *
+ */
+function test_module_menu() {
+  $items = array();
+  $items['test_form'] = array(
+    'title' => 'Test Form',
+    'page callback' => 'backdrop_get_form',
+    'page arguments' => array('test_module_one'),
+    'access callback' => TRUE,
+    'description' => 'A set of ten tutorials',
+    'type' => MENU_NORMAL_ITEM,
+  );
+  return $items;
+}
+
+/**
+ * Page callback for our general info page.
+ */
+function test_module_intro() {
+  $markup = t('This is a test module to test the color form type.');
+  return array('#markup' => $markup);
+}
+
+function test_module_one($form, &$form_state) {
+
+  $form['description'] = array(
+    '#type' => 'item',
+    '#title' => t('Here is the color field for testing.'),
+  );
+  // This is the first form element. It's a textfield with a label, "Name"
+  $form['name'] = array(
+    '#type' => 'color',
+    '#title' => t('Color'),
+  );
+  return $form;
+}

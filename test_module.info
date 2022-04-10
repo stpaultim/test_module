@@ -1,0 +1,4 @@
+name           = Test Module 
+description    = "Just a module to test things."
+backdrop       = 1.x
+type           = module
