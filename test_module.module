@@ -6,7 +6,7 @@
  */
 function test_module_menu() {
   $items = array();
-  $items['test_form'] = array(
+  $items['admin/config/user-interface/test_form'] = array(
     'title' => 'Test Form',
     'page callback' => 'backdrop_get_form',
     'page arguments' => array('test_module_one'),
